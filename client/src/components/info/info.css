@@ -1,0 +1,14 @@
+.info-bar {
+  background: var(--second);
+  color: var(--main);
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5vw 3.5vw;
+  border-radius: 0.015rem;
+}
+
+.info-bar a {
+  font-size: 1.5rem;
+}

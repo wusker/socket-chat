@@ -1,0 +1,53 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:focus,
+*:active {
+  outline: none;
+}
+
+:root {
+  --padding: 5vw;
+  --main: #414b72;
+  --second: #feadb6;
+}
+
+body {
+  padding: var(--padding);
+  font-family: sans-serif;
+  background: var(--main);
+  color: var(--second);
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-size: 1.5rem;
+  padding: 1.15rem 1.8rem;
+  margin-top: 2rem;
+  background: var(--second);
+  color: var(--main);
+  border: none;
+  border-radius: 0.015rem;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(0.88);
+}
+
+button:active {
+  filter: brightness(1.1);
+}
