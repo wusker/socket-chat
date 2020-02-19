@@ -4,7 +4,7 @@ import './info.css';
 
 const Info = ({ room }) => (
   <div className="info-bar">
-    <h1>{room}</h1>
+    <h1 className="uppercase">{room}</h1>
     <a href="/">×</a>
   </div>
 )

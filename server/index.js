@@ -1,6 +1,7 @@
 const express = require('express');
 const socketIO = require('socket.io');
 const http = require('http');
+const cors = require('cors');
 
 const PORT = process.env.PORT || 9090;
 
@@ -12,6 +13,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIO.listen(server);
 
+app.use(cors());
 app.use(router);
 
 io.on('connect', socket => {
@@ -43,6 +45,10 @@ io.on('connect', socket => {
 
   socket.on('sendMessage', (message, callback) => {
     const user = getUser(socket.id);
+
+    if (user.room == 'undefined') {
+      alert('undefined!!');
+    }
 
     io.to(user.room).emit('message', { user: user.name, text: message });
     io.to(user.room).emit('roomData', {

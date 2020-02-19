@@ -1,0 +1,12 @@
+form {
+  width: 100%;
+}
+
+form input {
+  margin-top: 10vmin;
+  width: 100%;
+}
+
+form button {
+  margin-top: 1rem;
+}

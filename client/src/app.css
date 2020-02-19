@@ -18,6 +18,9 @@
 }
 
 body {
+  overflow: hidden;
+  margin: auto;
+  max-width: 1300px;
   padding: var(--padding);
   font-family: sans-serif;
   background: var(--main);
@@ -50,4 +53,8 @@ button:hover {
 
 button:active {
   filter: brightness(1.1);
+}
+
+.uppercase {
+  text-transform: capitalize;
 }

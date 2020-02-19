@@ -1,0 +1,41 @@
+.message {
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.sender {
+  font-weight: 600;
+  margin-bottom: 0.33rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.015rem;
+}
+
+.text {
+  background: var(--second);
+  color: var(--main);
+  padding: 1.25rem 2rem;
+  border-radius: 0px 50px 50px 50px;
+  max-width: 400px;
+}
+
+.dark {
+  background: rgb(254, 209, 193);
+}
+
+.justifyEnd {
+  margin-bottom: 5rem;
+}
+
+.justifyEnd .text {
+  position: absolute;
+  right: 0;
+  border-radius: 50px 0px 50px 50px;
+}
+
+.justifyEnd .sender {
+  text-align: right;
+}
+
+.justifyStart {
+  justify-content: start;
+}

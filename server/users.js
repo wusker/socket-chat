@@ -9,7 +9,11 @@ const addUser = ({ id, name, room }) => {
   );
 
   if (!name || !room) return { error: 'Username and room are required.' };
-  if (existingUser) return { error: 'Username is taken.' };
+  if (existingUser) {
+    const newName = name + Date.now();
+    name = newName;
+    window.location = `http://localhost:3000/chat?name=${name}&room=${room}`;
+  }
 
   const user = { id, name, room };
 

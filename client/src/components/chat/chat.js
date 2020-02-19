@@ -4,6 +4,7 @@ import io from 'socket.io-client';
 import Info from '../info/info';
 import Input from '../input/input';
 import Messages from '../messages/messages';
+import TextContainer from '../textContainer/textContainer';
 
 import './chat.css';
 
@@ -12,9 +13,10 @@ let socket;
 const Chat = ({ location }) => {
   const [name, setName] = useState('');
   const [room, setRoom] = useState('');
+  const [users, setUsers] = useState('');
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
-  const ENDPOINT = 'localhost:3000';
+  const ENDPOINT = 'http://localhost:9090';
 
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
@@ -36,6 +38,10 @@ const Chat = ({ location }) => {
       setMessages([...messages, message]);
     });
 
+    socket.on('roomData', ({ users }) => {
+      setUsers(users);
+    });
+
     return () => {
       socket.emit('disconnect');
 
@@ -51,16 +57,13 @@ const Chat = ({ location }) => {
     }
   }
 
-  console.log(message);
-  console.log(messages);
-  console.log(messages.length);
-
   return (
-    <div className="inner-container">
+    <div className="outer-container">
       <label htmlFor="message"></label>
       <Info room={room}></Info>
       <Messages messages={messages} name={name}></Messages>
       <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
+      <TextContainer users={users}></TextContainer>
     </div>
   )
 }
