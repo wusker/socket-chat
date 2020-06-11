@@ -1,7 +1,10 @@
 .inner-container {
+  margin: auto;
   display: flex;
   flex-direction: column;
   border-radius: 0.015rem;
+  width: 70vmin;
+  min-width: 380px;
 }
 
 label {

@@ -11,10 +11,15 @@
   outline: none;
 }
 
+*::placeholder {
+  color: inherit;
+  opacity: 0.5;
+}
+
 :root {
   --padding: 5vw;
-  --main: #414b72;
-  --second: #feadb6;
+  --main: #1f2c61;
+  --second: #ff7c8b;
 }
 
 body {
