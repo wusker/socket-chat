@@ -1,7 +1,15 @@
 # Socket Chat
-> Some issues error handling here that need to be fixed with sockets but the main concept and style is working.
+
+Room-based chat built with Node, Express, Socket.io, and React.
 
 ## Getting Started
-`yarn`
 
-`yarn start`
+**Both directories** (Server, Client):
+
+```
+yarn
+
+yarn start
+```
+
+Join a room and test live-updating by joining the same room in a new, or a few tabs.
